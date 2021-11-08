@@ -58,5 +58,10 @@ namespace P2_KELVIN_20180193.UI.Registro
         {
 
         }
+
+        private void TiempoTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

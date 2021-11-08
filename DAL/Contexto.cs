@@ -12,6 +12,7 @@ namespace P2_KELVIN_20180193.DAL
     {
 
         public DbSet<TipoTareas> TipoTareas { get; set; }
+        public DbSet<Proyectos> Proyectos { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(@"Data Source = DATA\ProyectoSegundoParcial.db");
