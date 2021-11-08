@@ -18,7 +18,8 @@
                             <Image Source="/Resources/seo-social-web-network-internet_340_icon-icons.com_61497.png"  Height="20"/>
                             <Label Content="Buscar"/>
                         </StackPanel>
-                    </Button>
+                    </Button> 
+                    
                 </StackPanel>
                
             </StackPanel>
