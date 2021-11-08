@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:P2_KELVIN_20180193.UI.Registro"
         mc:Ignorable="d"
-        Title="rProyecto" Height="480" Width="680">
+        Title="Registro Detalle" Height="480" Width="680">
     <Grid>
         <StackPanel>
 

@@ -23,6 +23,7 @@ namespace P2_KELVIN_20180193.UI.Registro
         public rProyecto()
         {
             InitializeComponent();
+
             TipoTareaComboBox.ItemsSource = TipoTareasBLL.GetTiposTarea();
             TipoTareaComboBox.SelectedValuePath = "TipoTareaId";
             TipoTareaComboBox.DisplayMemberPath = "DescripcionTipoTarea";
