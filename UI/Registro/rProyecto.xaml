@@ -39,7 +39,7 @@
                         <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
                             <StackPanel Margin="0,0,10,0">
                                 <Label Content="Tipo de Tarea"/>
-                                <ComboBox  x:Name="TipoTareaComboBox" Width="150" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                                <ComboBox  x:Name="TipoTareaComboBox" Width="150" HorizontalAlignment="Left" Margin="5,0,0,0" SelectedValue="{Binding TipoTareas.TipoTareaId}"/>
                             </StackPanel>
 
                             <StackPanel Margin="0,0,10,0">

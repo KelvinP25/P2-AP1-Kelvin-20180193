@@ -1,4 +1,5 @@
-﻿using System;
+﻿using P2_KELVIN_20180193.BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,9 @@ namespace P2_KELVIN_20180193.UI.Registro
         public rProyecto()
         {
             InitializeComponent();
+            TipoTareaComboBox.ItemsSource = TipoTareasBLL.GetTiposTarea();
+            TipoTareaComboBox.SelectedValuePath = "TipoTareaId";
+            TipoTareaComboBox.DisplayMemberPath = "DescripcionTipoTarea";
         }
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
