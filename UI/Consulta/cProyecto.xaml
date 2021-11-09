@@ -47,10 +47,10 @@
             <StackPanel HorizontalAlignment="Left" >
                 <DataGrid x:Name="DatosDataGrid" Height="240" Width="500" AutoGenerateColumns="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Proyecto Id" />
-                        <DataGridTextColumn Header="Fecha" />
-                        <DataGridTextColumn Header="Descripción" />
-                        <DataGridTextColumn Header="Total de Horas" />
+                        <DataGridTextColumn Header="Proyecto Id" Binding="{Binding ProyectoId}"/>
+                        <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}"/>
+                        <DataGridTextColumn Header="Descripción" Binding="{Binding DescripcionProyecto}"/>
+                        <DataGridTextColumn Header="Total de Horas" Binding="{Binding Total}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
