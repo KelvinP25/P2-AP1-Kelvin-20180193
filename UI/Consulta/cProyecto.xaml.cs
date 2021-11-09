@@ -34,9 +34,11 @@ namespace P2_KELVIN_20180193.UI.Consulta
                 switch (FiltroComboBox.SelectedIndex)
                 {
                     //case 0:
-                    //    if(DesdeDatePicker.SelectedDate != null && HastaDatePicker.SelectedDate != null)
+                    //    if (DesdeDatePicker.SelectedDate != null && HastaDatePicker.SelectedDate != null)
                     //    {
-                    //        listado = ProyectosBLL.GetList(e => e.ProyectoId == UtilidadesBLL.ToInt(CriterioTextBox.Text))
+                    //        listado = ProyectosBLL.GetList(e => e.ProyectoId == UtilidadesBLL.ToInt(CriterioTextBox.Text)
+                    //        && e.Fecha.Date <)
+                                
                     //    }
                 }
             }

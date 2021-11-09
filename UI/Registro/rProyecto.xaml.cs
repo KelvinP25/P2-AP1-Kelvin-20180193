@@ -22,6 +22,7 @@ namespace P2_KELVIN_20180193.UI.Registro
     public partial class rProyecto : Window
     {
         private Proyectos proyectos = new Proyectos();
+        private ProyectosDetalle detalles = new ProyectosDetalle();
         public rProyecto()
         {
             InitializeComponent();
@@ -138,5 +139,7 @@ namespace P2_KELVIN_20180193.UI.Registro
                    MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+    
     }
 }
