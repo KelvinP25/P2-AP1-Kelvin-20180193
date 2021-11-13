@@ -29,13 +29,28 @@ namespace P2_KELVIN_20180193.UI.Consulta
         {
             var listado = new List<TipoTareas>();
 
-            switch (FiltroComboBox.SelectedIndex)
+            if (CriterioTextBox.Text.Trim().Length > 0)
             {
-                case 0: 
-                    listado = TipoTareasBLL.GetTiposTarea();
-                    break;
+                switch (FiltroComboBox.SelectedIndex)
+                {
+                    case 0: 
+                        listado = TipoTareasBLL.GetTiposTarea();
+                        break;
+                    case 1: 
+                        listado = TipoTareasBLL.GetList(e => e.TipoTareaId == UtilidadesBLL.ToInt(CriterioTextBox.Text));
+                        break;
+                    case 2: 
+                        listado = TipoTareasBLL.GetList(e => e.DescripcionTipoTarea.Contains(CriterioTextBox.Text.ToLower()));
+                        break;
+                    case 3:
+                        listado = TipoTareasBLL.GetList(e => e.TiempoAcumulado == UtilidadesBLL.ToInt(CriterioTextBox.Text));
+                        break;
+                }
             }
-
+            else
+            {
+                listado = TipoTareasBLL.GetList(e => true);
+            }
             DatosDataGrid.ItemsSource = null;
             DatosDataGrid.ItemsSource = listado;
         }

@@ -26,6 +26,7 @@ namespace P2_KELVIN_20180193.UI.Registro
         public rProyecto()
         {
             InitializeComponent();
+            this.DataContext = proyectos;
 
             TipoTareaComboBox.ItemsSource = TipoTareasBLL.GetTiposTarea();
             TipoTareaComboBox.SelectedValuePath = "TipoTareaId";
@@ -38,6 +39,7 @@ namespace P2_KELVIN_20180193.UI.Registro
             this.DataContext = null;
             this.DataContext = proyectos;
         }
+
         private void Limpiar()
         {
             this.DataContext = new Proyectos();
@@ -48,6 +50,20 @@ namespace P2_KELVIN_20180193.UI.Registro
             Proyectos esValido = ProyectosBLL.Buscar(proyectos.ProyectoId);
 
             return (esValido != null);
+        }
+        private bool Validar()
+        {
+            bool esValido = true;
+
+            if (DescripcionTextBox.Text.Length == 0)
+            {
+                esValido = false;
+                MessageBox.Show("Ingrese el campo faltante", "Fallo",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                DescripcionTextBox.Focus();
+            }
+
+            return esValido;
         }
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
@@ -92,9 +108,14 @@ namespace P2_KELVIN_20180193.UI.Registro
             Limpiar();
         }
 
+
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
             bool paso = false;
+            if (!Validar())
+            {
+                return;
+            }
             if(proyectos.ProyectoId==0){
                 paso = ProyectosBLL.Guardar(proyectos);
             }
@@ -112,14 +133,16 @@ namespace P2_KELVIN_20180193.UI.Registro
             }
             if (paso)
             {
-                Limpiar();
+                
                 MessageBox.Show("Guardado!!", "Exito",
                    MessageBoxButton.OK, MessageBoxImage.Information);
+                Limpiar();
             }
             else
             {
                 MessageBox.Show("Error al guardar", "fallo",
                    MessageBoxButton.OK, MessageBoxImage.Error);
+                Limpiar();
             }
         }
 

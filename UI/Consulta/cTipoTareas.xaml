@@ -13,19 +13,30 @@
                     <Label x:Name="FiltroLabel" Content="Filtro:"/>
                     <ComboBox x:Name="FiltroComboBox" Width="100" Height="25">
                         <ComboBoxItem x:Name="ListadoComboBoxItem" Content="Listado"/>
+                        <ComboBoxItem x:Name="TipoTareaIdComboBoxItem" Content="Tipo Tarea Id"/>
+                        <ComboBoxItem x:Name="DescripcionComboBoxItem" Content="Descripción"/>
+                        <ComboBoxItem x:Name="TiempoAcumuladoComboBoxItem" Content="Tiempo Acumulado"/>
                     </ComboBox>
                 </StackPanel>
 
-                <Button x:Name="BuscarButton" Height="28" Width="85" Margin="0,20,0,0" Click="BuscarButton_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <UIElement.RenderTransform>
-                            <MatrixTransform/>
-                        </UIElement.RenderTransform>
-                        <Image Source="/Resources/seo-social-web-network-internet_340_icon-icons.com_61497.png" Height="25"/>
-
-                        <Label Content="Buscar"/>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <Label Content="Criterio"/>
+                        <TextBox x:Name="CriterioTextBox" Height="20" Width="120" Margin="0,5,10,0"/>
                     </StackPanel>
-                </Button>
+                   
+                    <Button x:Name="BuscarButton" Height="28" Width="85" Margin="0,20,0,0" Click="BuscarButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <UIElement.RenderTransform>
+                                <MatrixTransform/>
+                            </UIElement.RenderTransform>
+                            <Image Source="/Resources/seo-social-web-network-internet_340_icon-icons.com_61497.png" Height="25"/>
+
+                            <Label Content="Buscar"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Left">

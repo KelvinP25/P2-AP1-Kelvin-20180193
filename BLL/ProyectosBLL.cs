@@ -46,7 +46,7 @@ namespace P2_KELVIN_20180193.BLL
                 {
                     contexto.Entry(detalle).State = EntityState.Added;
                     contexto.Entry(detalle.TipoTareas).State = EntityState.Modified;
-                    contexto.Entry(detalle.Proyectos).State = EntityState.Modified;
+                    //contexto.Entry(detalle.Proyectos).State = EntityState.Modified;
                     detalle.TipoTareas.TiempoAcumulado += detalle.Tiempo;
                     detalle.Proyectos.Total += detalle.Tiempo;
                 }
@@ -78,17 +78,18 @@ namespace P2_KELVIN_20180193.BLL
 
                 foreach (var detalle in anterior.Detalle)
                 {
+                   
                     detalle.TipoTareas.TiempoAcumulado -= detalle.Tiempo;
                     detalle.Proyectos.Total -= detalle.Tiempo;
                 }
 
-                contexto.Database.ExecuteSqlRaw($"Delete FROM ProyectosDetalle Where Id={proyectos.ProyectoId}");
+                contexto.Database.ExecuteSqlRaw($"Delete FROM ProyectosDetalle Where ProyectoId={proyectos.ProyectoId}");
 
                 foreach(var item in proyectos.Detalle)
                 {
                     contexto.Entry(item).State = EntityState.Added;
                     contexto.Entry(item.TipoTareas).State = EntityState.Modified;
-                    contexto.Entry(item.Proyectos).State = EntityState.Modified;
+                    //contexto.Entry(item.Proyectos).State = EntityState.Modified;
                     item.TipoTareas.TiempoAcumulado += item.Tiempo;
                     item.Proyectos.Total += item.Tiempo;
                 }
@@ -155,7 +156,7 @@ namespace P2_KELVIN_20180193.BLL
                 {
                     foreach (var item in proyecto.Detalle)
                     {
-                        contexto.Entry(item.Proyectos).State = EntityState.Modified;
+                        //contexto.Entry(item.Proyectos).State = EntityState.Modified;
                         contexto.Entry(item.TipoTareas).State = EntityState.Modified;
                         item.TipoTareas.TiempoAcumulado -= item.Tiempo;
                         item.Proyectos.Total -= item.Tiempo;
